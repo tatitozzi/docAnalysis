@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gráfico de análise de sentimento</title>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+  <svg id="grafico" width="1000" height="700"></svg>
+
+  <script>
+    const width = 1000;
+    const height = 700;
+    const radius = Math.min(width, height) / 2;
+
+    const svg = d3.select("#grafico")
+      .attr("width", width)
+      .attr("height", height);
+
+    // Define a escala de cores
+    const colorScale = d3.scaleLinear()
+      .domain([0, 150, 250, 500])
+      .range(["red", "gray", "green", "blue"]);
+
+    // Define o filtro de cores para cada categoria de sentimento
+    function definirCor(d) {
+      const valor = d.data.Value;
+      return colorScale(valor);
+    }
+
+    d3.csv("/DOC_Analysis/files/json/grafico04.csv").then(function (dados) {
+      const pie = d3.pie()
+        .value(d => d.Value)
+        .sort(null);
+
+      const arc = d3.arc()
+        .innerRadius(radius * 0.6)
+        .outerRadius(radius * 0.8);
+
+      const labelArc = d3.arc()
+        .innerRadius(radius * 0.9)
+        .outerRadius(radius * 0.9);
+
+      const g = svg.append("g")
+        .attr("transform", `translate(${width / 2},${height / 2})`);
+
+      const setor = g.selectAll(".setor")
+        .data(pie(dados))
+        .enter().append("g")
+        .attr("class", "setor");
+
+      setor.append("path")
+        .attr("d", arc)
+        .style("fill", definirCor)
+        .on("mouseover", function () {
+          d3.select(this).transition()
+            .duration(200)
+            .attr("d", d3.arc()
+              .innerRadius(radius * 0.6)
+              .outerRadius(radius * 0.9)
+            );
+          g.append("text")
+            .attr("class", "info")
+            .attr("transform", `translate(${width / 60},${height / 95})`)
+            .style("text-anchor", "middle")
+            .text(`${d3.select(this.parentNode).datum().data.Termo}: Frequência - ${d3.select(this.parentNode).datum().data.Value}`);
+        })
+        .on("mouseout", function () {
+          d3.select(this).transition()
+            .duration(200)
+            .attr("d", arc);
+          d3.select(".info").remove();
+        });
+
+      setor.append("text")
+        .attr("transform", d => `translate(${labelArc.centroid(d)})`)
+        .text(d => d.data.Termo)
+        .style("font-size", "14px")
+        .style("text-anchor", "middle")
+        .style("opacity", 0); // Initially, set text opacity to 0
+
+      // Transition to display text on mouseover
+      setor.on("mouseover", function (event, d) {
+          d3.select(this).select("text")
+            .transition()
+            .duration(200)
+            .style("opacity", 1);
+        })
+        .on("mouseout", function (event, d) {
+          d3.select(this).select("text")
+            .transition()
+            .duration(200)
+            .style("opacity", 0);
+        });
+
+      svg.append("text")
+        .attr("x", width / 2)
+        .attr("y", 325)
+        .attr("text-anchor", "middle")
+        .text("Análise de Sentimento")
+        .style("font-size", "24px")
+        .style("font-weight", "bold");
+
+      // Adiciona a legenda
+      const legenda = svg.append("g")
+        .attr("transform", `translate(${50},${height - 50})`);
+
+      legenda.selectAll("rect")
+        .data(colorScale.range())
+        .enter().append("rect")
+        .attr("width", 15)
+        .attr("height", 15)
+        .attr("x", (_, i) => 20 + i * 70)
+        .attr("fill", d => d);
+
+      legenda.selectAll("text")
+        .data(["Negativo", "Neutro", "Positivo", "Bem positivo"])
+        .enter().append("text")
+        .attr("x", (_, i) => 40 + i * 70)
+        .attr("y", 13)
+        .text(d => d);
+    });
+  </script>
+</body>
+</html>

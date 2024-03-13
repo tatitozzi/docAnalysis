@@ -1,0 +1,22 @@
+.word {
+    cursor: pointer;
+    transition: font-size 0.3s ease-in-out;
+  }
+  
+  .word:hover {
+    font-size: 120%;
+    font-weight: bold;
+  }
+  
+  .d3-tip {
+    position: absolute;
+    z-index: 10;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+    pointer-events: none;
+  }
+  

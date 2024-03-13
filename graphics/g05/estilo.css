@@ -1,0 +1,17 @@
+#observablehq-chart-663d9910 {
+  width: 100%;
+  padding-left: 15px;
+  }
+  
+  .observablehq-chart-x-axis-label {
+  margin-top: 10px;
+  padding-left: 10px;
+  }
+  
+  .observablehq-chart-label {
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  padding-left: 10px;
+  word-wrap: break-word;
+  }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Nuvem de Termos com D3.js</title>
+    <style>
+ #grafico {
+        width: 1000px;
+        height: 600px;
+        background-color: #fff;
+        margin: 0 auto;
+        position: relative;
+      }
+      .word {
+        cursor: pointer;
+        transition: font-size 0.3s ease-in-out;
+      }
+
+      .word:hover {
+        font-size: 120%;
+        font-weight: bold;
+      }
+
+      .d3-tip {
+        position: absolute;
+        z-index: 10;
+        padding: 8px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 3px;
+        pointer-events: none;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="grafico"></div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.5/build/d3.layout.cloud.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
