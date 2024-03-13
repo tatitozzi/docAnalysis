@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados do Estudo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 50px;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 20px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .sidebar a:hover {
+            text-decoration: none;
+        }
+
+        .content {
+            margin-top: 70px;
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .content iframe {
+            width: 125%;
+            height: 1000px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><i class="fas fa-file-alt"></i> DOC Analysis</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="listar.php"><i class="fas fa-folder"></i> Meus estudos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="criar.php"><i class="fas fa-plus"></i> Criar estudo</a>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-primary" onclick="window.location.href='resultado_geral.html'">Resultado geral</button>
+            </li>  
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <h4>Gráficos</h4>
+        <a href="#grafico1">Gráfico 1</a>
+        <a href="#grafico2">Gráfico 2</a>
+        <a href="#grafico3">Gráfico 3</a>
+        <a href="#grafico4">Gráfico 4</a>
+        <a href="#grafico5">Gráfico 5</a>
+        <a href="#grafico6">Gráfico 6</a>
+        <a href="#grafico7">Gráfico 7</a>
+        <a href="#grafico8">Gráfico 8</a>
+        <a href="#grafico9">Gráfico 9</a>
+        <a href="#grafico10">Gráfico 10</a>
+        <a href="#grafico11">Gráfico 11</a>
+        <a href="#grafico12">Gráfico 12</a>
+    </div>
+
+    
+    <div class="content">
+        <h1>Resultados do Estudo</h1>
+        <p>Aqui estão os resultados do estudo:</p>
+        <h2 id="grafico1">Gráfico 1</h2>
+        <iframe src="graphics/g01/"></iframe>
+        <h2 id="grafico2">Gráfico 2</h2>
+        <iframe src="graphics/g02/"></iframe>
+        <h2 id="grafico3">Gráfico 3</h2>
+        <iframe src="graphics/g03/"></iframe>
+        <h2 id="grafico4">Gráfico 4</h2>
+        <iframe src="graphics/g04/"></iframe>
+        <h2 id="grafico5">Gráfico 5</h2>
+        <iframe src="graphics/g05/"></iframe>
+        <h2 id="grafico6">Gráfico 6</h2>
+        <iframe src="graphics/g06/"></iframe>
+        <h2 id="grafico7">Gráfico 7</h2>
+        <iframe src="graphics/g07/"></iframe>
+        <h2 id="grafico8">Gráfico 8</h2>
+        <iframe src="graphics/g08/"></iframe>
+        <h2 id="grafico9">Gráfico 9</h2>
+        <iframe src="graphics/g09/"></iframe>
+        <h2 id="grafico10">Gráfico 10</h2>
+        <iframe src="graphics/g10/"></iframe>
+        <h2 id="grafico11">Gráfico 11</h2>
+        <iframe src="graphics/g11/"></iframe>
+        <h2 id="grafico12">Gráfico 12</h2>
+        <iframe src="graphics/g12/"></iframe>
+    </div>
+
+
+    <footer class="bg-light text-center py-3" style= "position:fixed ; bottom: 0; width: 100%;">
+		<p>&copy; 2023 - Todos os direitos reservados - DOC Analysis</p>
+	</footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+          $('.content iframe').hide();
+          $('.sidebar a').click(function() {
+              var grafico = $(this).attr('href');
+              $('.content iframe').hide();
+              $(grafico).next().show();
+              return false;
+          });
+      });
+
+        $('.sidebar a').click(function() {
+      var grafico = $(this).attr('href');
+      $('.content h2').hide(); // Adicionar essa linha
+      $('.content iframe').hide();
+      $(grafico).next().show();
+      return false;
+  });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados do Estudo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 50px;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 20px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .sidebar a:hover {
+            text-decoration: none;
+        }
+
+        .content {
+            margin-top: 70px;
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .content iframe {
+            width: 200px;
+            height: 400px;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><i class="fas fa-file-alt"></i> DOC Analysis</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="listar.php"><i class="fas fa-folder"></i> Meus estudos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="criar.php"><i class="fas fa-plus"></i> Criar estudo</a>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-primary" onclick="window.location.href='resultado_individual.html'">Resultado individual</button>
+            </li>  
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+<br>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="height: 100vh; ">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2 class="text-left mt-5" style="font-size: 100%;">Resultados do Estudo</h2>
+                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="graphics/g01/"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="graphics/g02/"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="graphics/g03/"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="graphics/g04/"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="graphics/g05/"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="graphics/g06/"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="graphics/g07/"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="graphics/g08/"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="graphics/g09/"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="graphics/g10/"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="graphics/g11/"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="graphics/g12"></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<footer class="bg-light text-center py-3" style= "position:fixed ; bottom: 0; width: 100%;">
+		<p>&copy; 2023 - Todos os direitos reservados - DOC Analysis</p>
+	</footer>
+
+
+<!-- SCRIPTS -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script>
+		// Função para carregar o gráfico selecionado no iframe
+		function carregarGrafico(iframe, url) {
+			iframe.attr("src", url);
+		}
+
+		$(document).ready(function() {
+			// Carrega o primeiro gráfico ao abrir a página
+			var primeiroGrafico = $("#graficos-menu a:first-child").attr("href");
+			carregarGrafico($("#graficos-iframe"), primeiroGrafico);
+
+			// Define o comportamento do menu de gráficos
+			$("#graficos-menu a").click(function(event) {
+			event.preventDefault();
+			var graficoUrl = $(this).attr("href");
+			carregarGrafico($("#graficos-iframe"), graficoUrl);
+			});
+		});
+		</script>
+</body>
+</html>
