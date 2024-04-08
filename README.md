@@ -62,25 +62,38 @@ Certifique-se de que o usuário do Apache tenha permissões para executar o arqu
 
 Você pode criar uma taxonomia conforme esta estrutura usando uma planilha (xls ou xlsx):
 
-| Pref Termo   | Alt Termo      | Termos                            |
-|--------------|----------------|-----------------------------------|
-| Categoria    | Tipo           | Carnes, Vegetais, Grãos, Frutas   |
-| Cozimento    | Preparação      | Grelhado, Cozido, Assado, Frito   |
-| Prato        | Receita        | Massas, Saladas, Sopas, Sobremesas|
-| Regional     | Culinária      | Italiana, Mexicana, Indiana, Japonesa|
-| Estilo       | Modo de Servir | Churrasco, Buffet, À la carte, Fast Food|
-| Dieta        | Restrições     | Vegetariano, Sem Glúten, Vegan, Low-Carb|
-| Tempero      | Condimento     | Sal, Pimenta, Ervas, Molhos       |
-| Textura      | Consistência   | Crocante, Macio, Cremoso, Grelhado|
-| Ocasião      | Evento         | Café da manhã, Almoço, Jantar, Festa|
-| Popularidade | Tendência      | Superfood, Gourmet, Comfort Food, Street Food|
+| Dimensão          | Nome do Fator          | Pref Termo       | Alt Termo        | Termos                                                                                      |
+|-------------------|------------------------|------------------|------------------|---------------------------------------------------------------------------------------------|
+| **Categorias**    | **Tipo de Culinária**  | Internacional    | Global           | Cozinhas do mundo, culinária internacional, pratos globais                                   |
+|                   |                        | Regional         | Tradicional      | Culinária regional, pratos tradicionais, comida típica                                       |
+|                   |                        | Vegetariana      | Vegana           | Comida vegetariana, opções veganas, alimentação baseada em plantas                            |
+| **Ingredientes**  | **Origem dos Ingredientes** | Orgânico   | Natural          | Ingredientes orgânicos, produtos naturais, alimentos sem pesticidas                            |
+|                   |                        | Local            | Sazonal          | Ingredientes locais, produtos da estação, alimentos frescos                                   |
+|                   |                        | Exótico          | Especialidade    | Ingredientes exóticos, produtos de outras regiões, itens raros                                |
+| **Métodos de Culinária** | **Técnica de Preparo** | Assar        | Grelhar          | Assar no forno, grelhar na churrasqueira, cozinhar sobre fogo aberto                         |
+|                   |                        | Cozinhar         | Ferver           | Cozinhar em água fervente, ferver os ingredientes, preparar ensopados                         |
+|                   |                        | Refogar          | Saltear          | Refogar na frigideira, saltear os alimentos, cozinhar rapidamente com pouca gordura            |
+| **Pratos**        | **Tipo de Refeição**   | Entrada          | Aperitivo        | Pratos de entrada, aperitivos, petiscos                                                       |
+|                   |                        | Prato Principal  | Prato Principal  | Pratos principais, refeições principais, pratos de destaque                                   |
+|                   |                        | Sobremesa        | Doce             | Sobremesas, doces, guloseimas                                                                |
+|                   | **Estilo de Servir**  | Buffet           | Self-service     | Serviço de buffet, autoatendimento, refeições servidas em bancadas                            |
+|                   |                        | À La Carte       | Menu Fixo        | Serviço à la carte, menu fixo, escolha individual de pratos                                    |
+|                   |                        | Família          | Compartilhado    | Refeições em estilo familiar, pratos compartilhados, comida de conforto                        |
+| **Ferramentas**   | **Equipamentos de Cozinha** | Panelas     | Frigideira       | Panelas de cozimento, frigideiras, utensílios para fritar e cozinhar                           |
+|                   |                        | Forno            | Microondas       | Fornos convencionais, micro-ondas, aparelhos de cozimento                                      |
+|                   |                        | Utensílios       | Colher de pau    | Utensílios de cozinha, colheres de pau, ferramentas de preparo                                  |
+|                   |                        | Acessórios       | Processador de Alimentos | Acessórios de cozinha, processadores de alimentos, aparelhos auxiliares de preparo        |
+|                   |                        | Talheres         | Faca             | Talheres de cozinha, facas, utensílios para cortar e servir                                     |
+|                   |                        | Equipamentos Especiais | Churrasqueira | Equipamentos especiais, churrasqueiras, aparelhos para técnicas específicas de cozimento       |
+
 
 ## Importante!
 - Utilize o WampServer (https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/) para utilizar o DOC Analysis
 - Utilize o cabecalho abaixo em sua planilha:
 
-| Pref Termo   | Alt Termo      | Termos                            |
-|--------------|----------------|-----------------------------------|
+
+| Dimensão          | Nome do Fator          | Pref Termo       | Alt Termo        | Termos                                                                                      |
+|-------------------|------------------------|------------------|------------------|---------------------------------------------------------------------------------------------|
 
 ---
 
